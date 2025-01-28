@@ -1,0 +1,37 @@
+name: PR Validation
+
+on:
+  pull_request:
+    branches:
+      - develop
+
+jobs:
+  linting:
+    name: Lint HTML and CSS
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        
+      - name: Install dependencies
+        run: |
+          npm install -g htmlhint stylelint
+
+      - name: Lint HTML files
+        run: htmlhint "src/**/*.html"
+
+      - name: Lint CSS files
+        run: stylelint "src/**/*.css"
+
+  build:
+    name: Build Website
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        
+      - name: Install dependencies
+        run: npm install parcel-bundler
+
+      - name: Build the project
+        run: parcel build src/index.html --dist-dir dist
