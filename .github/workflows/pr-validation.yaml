@@ -34,4 +34,4 @@ jobs:
         run: npm install parcel-bundler
 
       - name: Build the project
-        run: parcel build src/index.html --dist-dir dist
+        run: parcel build src/home.html --dist-dir dist
