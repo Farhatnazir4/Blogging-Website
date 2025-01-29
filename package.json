@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/Farhatnazir4/Blogging-Website/issues"
   },
-  "homepage": "https://github.com/Farhatnazir4/Blogging-Website#readme"
+  "homepage": "https://github.com/Farhatnazir4/Blogging-Website#readme",
+  "devDependencies": {
+    "htmlhint": "^1.1.4"
+  }
 }
